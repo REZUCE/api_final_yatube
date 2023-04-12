@@ -46,8 +46,6 @@ class PostViewSet(viewsets.ModelViewSet):
                           permissions.IsAuthenticatedOrReadOnly, ]
     pagination_class = LimitOffsetPagination
 
-    # pagination_class = LimitOffsetPagination
-
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
 
@@ -60,13 +58,13 @@ class CommentViewSet(viewsets.ModelViewSet):
     permission_classes = [IsOwnerOrReadOnly,
                           permissions.IsAuthenticatedOrReadOnly, ]
 
-    def get_queryset(self):
-        # Получаем id поста из эндпоинта
+    def get_post(self):
         post = get_object_or_404(Post, id=self.kwargs.get("post_id"))
-        # И отбираем только нужные посты
-        new_queryset = post.comments.all()
+        return post
+
+    def get_queryset(self):
+        new_queryset = self.get_post().comments.all()
         return new_queryset
 
     def perform_create(self, serializer):
-        post = get_object_or_404(Post, id=self.kwargs.get("post_id"))
-        serializer.save(author=self.request.user, post=post)
+        serializer.save(author=self.request.user, post=self.get_post())

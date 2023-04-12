@@ -60,3 +60,6 @@ http://127.0.0.1:8000/redoc/
     GET api/v1/{post_id}/comments/ - получение всех комментариев к публикации
     GET api/v1/{post_id}/comments/{id}/ - Получение комментария к публикации по id
     ```
+## Связь с автором:
+- [VK](https://vk.com/twisttheknife)
+- Telegram: @LisicynV
