@@ -9,14 +9,14 @@
 - Просмотр списка существующих групп и информации об конкретной группе.
 - Возможность подписаться на конкретного автора и увидеть список подписок.
 
-## Написан с использованией таких технологий:
+## Написан с использованием таких технологий:
 - [Python 3.9](https://docs.python.org/3.9/whatsnew/3.9.html)
 - [Django 3.2](https://docs.djangoproject.com/en/3.2/intro/)
 - [DRF 3.12](https://docs.djangoproject.com/en/3.2/intro/)
 - [JWT](https://pypi.org/project/djangorestframework-simplejwt/)+[djoser](https://djoser.readthedocs.io/en/latest/getting_started.html)
 
 ## Установка
-**Клонировать репозиторий и перейти в него в командной строке:**
+**Нужно клонировать репозиторий и перейти в него:**
 ```
 git@github.com:REZUCE/api_final_yatube.git
 ```
@@ -37,7 +37,7 @@ python manage.py migrate
 ```
 python manage.py runserver
 ```
-**Для просмотка документации к API перейдите:**
+**Для просмотра документации к API перейдите:**
 http://127.0.0.1:8000/redoc/
 ## Пример работы с API:
 1. Доступ для работы осуществляется с помощью авторизации Token:
@@ -61,5 +61,4 @@ http://127.0.0.1:8000/redoc/
     GET api/v1/{post_id}/comments/{id}/ - Получение комментария к публикации по id
     ```
 ## Связь с автором:
-- [VK](https://vk.com/twisttheknife)
 - Telegram: @LisicynV
